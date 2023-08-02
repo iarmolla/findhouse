@@ -1,0 +1,13 @@
+.bg-image {
+    background: url(../../assets/svg/wave.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100%;
+}
+
+*::selection {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+

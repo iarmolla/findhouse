@@ -1,0 +1,31 @@
+<form class="lg:translate-y-6 xl:-translate-y-10 form text-center flex w-full items-center p-16 flex-col justify-center border border-gray-200 rounded-lg" id="form" method="post">
+    <h1 class="form__title text-gray-500 text-2xl">Contacto</h1>
+    <div class="text-base mt-4 flex flex-col gap-4 w-full text-gray-500 text-left">
+        <label for="name">Nombre</label>
+        <div class="text-base">
+            <input type="text" id="name" autocomplete="off"
+                class="w-full outline-none rounded-lg py-2 px-3 border-2 focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="john" />
+        </div>
+        <label for="email">Email</label>
+        <div class="text-base">
+            <input type="email" autocomplete="off" id="email"
+                class="w-full border-2 py-2 px-3 outline-none rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Ingrese su email" />
+        </div>
+        <label for="phone">Telefono</label>
+        <div class="text-base">
+            <input type="tel" autocomplete="off" id="phone"
+                class="w-full border-2 py-2 px-3 outline-none rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Ingrese su telefono" />
+        </div>
+        <label for="message">Mensaje</label>
+        <div class="text-base">
+            <textarea type="text" autocomplete="off" id="message"
+                class="w-full border-2 py-2 px-3 outline-none rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="Ingrese su mensaje"></textarea>
+        </div>
+        <button type="submit"
+            class="rounded-lg text-white py-2 cursor-pointer bg-indigo-500 transition-all focus:ring-4  hover:bg-indigo-600">Contactar</button>
+    </div>
+</form>

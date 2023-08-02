@@ -1,0 +1,120 @@
+
+<div class="p-5  lg:p-12 lg:px-52">
+    <section class="flex flex-col">
+        <h2 class="text-3xl mb-5 font-semibold">Habitación en {{ownership.city}}</h2>
+        <article class="flex flex-row items-center justify-start gap-7 mb-2">
+            <div class="flex flex-row items-center justify-start gap-1">
+                <i class="fa-solid fa-star"></i>
+                <span>4.5</span>
+            </div>
+            <span class="underline py-2">15 reseñas</span>
+            <div class="flex flex-row items-center justify-start gap-1">
+                <i class="fa-solid fa-heart"></i>
+                <p>Propietario</p>
+            </div>
+        </article>
+        <article class="flex flex-row gap-2">
+         <img class="md:hidden rounded-md h-full max-h[300px] w-full object-cover row-span-4 hover:brightness-90 col-span-4 cursor-pointer hover:opacity-90 transition-all" src={{images[0]|imageUrl}}>
+            <!-- <img class="hidden md:grid h-full row-span-4 col-span-4" src={{images[0]|imageUrl}}> -->
+            <div class="grid-rows-4 grid-cols-8 gap-2 p-4 lg:p-0 hidden md:grid lg:grid">
+                <img class="h-full rounded-md row-span-4 hover:brightness-90 col-span-4 cursor-pointer hover:opacity-90 transition-all" src={{images[0]|imageUrl}}>
+              <ng-container *ngFor="let image of images">
+                <div class="row-span-2 col-span-2">
+                    <img class="rounded-md h-full w-full cursor-pointer hover:brightness-90 transition-all" src="{{image | imageUrl}}">
+                </div>
+              </ng-container>
+            </div>
+        </article>
+        
+        <article class="border-b-2  border-b-gray-300 w-2/4">
+            <ul class="flex flex-row gap-6 p-5">
+                <li>{{ownership.rooms}} Cuarto</li>
+                <li class="list-disc">1 Cama</li>
+                <li class="list-disc">2 Personas</li>
+                <li class="list-disc">{{ownership.bathrooms}} Baño</li>
+            </ul>
+        </article>
+    </section>
+    <section class="flex flex-col xl:flex-row gap-10 items-center justify-center">
+        <article style="background-color: #F3F7F8;" class="xl:w-2/4 mt-5 px-10 rounded-lg pt-5 pb-5 h-max mb-5 lg:mb-0 flex flex-col items-center justify-center">
+            <div class="lg:w-full max-w-sm bg-white border border-gray-200 rounded-xl shadow p-5 flex flex-col items-center">
+                <div class="flex flex-col lg:flex-col xl:flex-row sm:flex-row items-center justify-center gap-5 ">
+                    <img class="w-24 h-24 rounded-full shadow-lg" src="https://semantic-ui.com/images/avatar2/large/elyse.png" alt="Bonnie image" />
+                    <div class="flex flex-col">
+                        <h5 class="mb-1 text-xl text-center font-medium text-gray-900">{{ownership.email}}</h5>
+                        <span class="text-2xl text-center text-gray-900 ">Propietario</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 flex flex-col gap-2">
+                <div class="flex flex-row items-center justify-start gap-3">
+                    <i class="fa-solid fa-calendar-days" style="color: #555557;"></i>
+                    <span>
+                        Años como Propietario: 6
+                    </span>
+                </div>
+                <div class="flex flex-row items-center justify-start gap-3">
+                    <i class="fa-solid fa-briefcase" style="color: #555557;"></i>
+                    <span>Artista</span>
+                </div>
+                <div class="flex flex-row items-center justify-start gap-3">
+                    <i class="fa-solid fa-cake-candles" style="color: #555557;"></i>
+                    <span>01/01/1990</span>
+                </div>
+                <div class="flex flex-row items-center justify-start gap-3">
+                    <i class="fa-solid fa-dog" style="color: #555557;"></i>
+                    <span>Mascotas: Permitidas</span>
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque illum in cum ipsam amet quos,
+                        aliquid
+                        perferendis eius ea iure.</p>
+                </div>
+            </div>
+        </article>
+        <app-contact></app-contact>
+    </section>
+    <section>
+        <article class="mt-5">
+            <h4 class="text-xl font-semibold mb-3">Acerca del lugar</h4>
+            <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa blanditiis quo ducimus non
+                maiores delectus sunt quia ratione dolor ex.</p>
+            <span class="underline cursor-pointer hover:text-indigo-400">Mostrar mas <i
+                    class="fa-solid fa-arrow-right underline cursor-pointer"></i></span>
+        </article>
+    </section>
+    <section>
+        <article class="flex flex-col mt-5">
+            <h5 class="text-xl font-semibold mb-3">Reseñas</h5>
+            <div class="flex flex-row items-center justify-start gap-5">
+                <div class="flex flex-row gap-1 items-center justify-center">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4.5</span>
+                </div>
+                <span class="py-2 underline">15 opiniones</span>
+            </div>
+        </article>
+        <article class="mt-5 flex flex-col gap-5">
+            <div>
+                <div class="flex flex-row items-center justify-start gap-5">
+                    <!-- <img class="w-12 h-12 rounded-full shadow-lg" src="{{profile}}" alt="Bonnie image" /> -->
+                    <div class="flex flex-col">
+                        <span class="font-semibold">Sadosky</span>
+                        <span class="text-sm font-semibold text-gray-500">Marzo 2023</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti adipisci voluptates
+                        harum
+                        itaque rem voluptatum est exercitationem odit accusantium? Minus blanditiis saepe assumenda quod
+                        iste
+                        doloremque? Ab, quidem necessitatibus!</p>
+                    <span class="underline cursor-pointer hover:text-indigo-400">Mostrar mas <i
+                            class="fa-solid fa-arrow-right underline cursor-pointer"></i></span>
+                </div>
+                <button class="border-2 border-gray-300 py-3 px-5 rounded-lg my-5 hover:bg-gray-100">Mostrar todas las
+                    reseñas</button>
+            </div>
+        </article>
+    </section>
+</div>

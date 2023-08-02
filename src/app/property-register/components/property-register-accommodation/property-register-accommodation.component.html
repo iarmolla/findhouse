@@ -1,0 +1,12 @@
+<div class="relative flex flex-col gap-10 items-center justify-center h-full mx-5">
+    <section class="flex flex-col gap-4 items-center justify-center">
+        <h4 class="font-bold text-xl mb-4 text-center">¿De que tipo de alojamiento dispondrían los huespedes?</h4>
+        <article (click)="activate(type)" *ngFor="let type of typeOfHouse" [ngClass]="{'ring-4 ring-[#e45858b9]': type.activate}" class="border-2 border-gray-300 rounded-2xl flex flex-row items-center justify-center gap-5 px-12 py-4 cursor-pointer hover:bg-gray-100">
+            <div>
+                <span class="font-semibold text-lg">{{type.title}}</span>
+                <p>{{type.description}}</p>
+            </div>
+            <img src="{{houseSvg}}" alt="casa">
+        </article>
+    </section>
+</div>

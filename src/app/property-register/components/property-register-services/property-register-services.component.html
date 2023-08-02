@@ -1,0 +1,9 @@
+<div class="relative flex flex-col items-center justify-center gap-10 h-full">
+    <span class="font-bold text-2xl text-center">¿Cual de estas opciones de servicios brinda su espacio?</span>
+    <section class="flex flex-row flex-wrap items-center justify-center gap-1 md:gap-5 lg:w-2/4">
+        <article [ngClass]="{'ring-4 ring-[#e45858b9]': service.activate}" (click)="activate(service)" *ngFor="let service of services" class="flex flex-col items-start justify-center border-2 border-gray-300 rounded-2xl gap-5 w-44 p-4 cursor-pointer hover:bg-gray-100">
+            <i [ngClass]="service.icon"></i>
+            <span class="font-medium">{{service.title}}</span>
+        </article>
+    </section>
+</div>

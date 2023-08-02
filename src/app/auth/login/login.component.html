@@ -1,0 +1,32 @@
+<div class="grid sm:grid-cols-1 lg:grid-cols-2 w-screen">
+    <section class="container__image bg-cover opacity-50 lg:flex lg:justify-center lg:items-center lg:relative">
+        <span class="hidden lg:block absolute text-6xl italic border-b-4 border-b-gray-700">FindHouse</span>
+    </section>
+    <section>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="form h-screen text-center flex items-center p-16 flex-col justify-center" id="form" method="post">
+            <span class="form__title text-gray-500 text-2xl md:text-3xl lg:text-4xl">Iniciar sesión</span>
+            <div class="text-sm md:text-xl mt-4 flex flex-col gap-4 text-gray-500 text-left w-full md:w-4/5">
+                <label for="email">Email</label>
+                <div class="text-base">
+                    <input formControlName="email" type="text" id="email" autocomplete="off" class="w-full outline-none rounded-lg py-2 px-3 border-2 focus:ring-[#e45858] focus:border-[#e45858]" placeholder="johndoe@gmail.com" />
+                </div>
+                <div class="text-red-500 text-sm" *ngIf="f['email'].errors && f['email'].touched || submitted && f['email'].errors">
+                    <span *ngIf="f['email'].errors['required']">{{errorMessage.required}}</span>
+                    <span *ngIf="f['email'].errors['pattern']">{{errorMessage.check}}</span>
+                </div>   
+                <label for="password">Contraseña</label>
+                <div class="text-base">
+                    <input formControlName="password" type="password" autocomplete="off" id="password" class="w-full border-2 py-2 px-3 outline-none rounded-lg focus:ring-indigo-500 focus:border-[#e45858]" placeholder="Ingrese su contraseña"/>
+                </div>
+                <div class="text-red-500 text-sm" *ngIf="f['password'].errors && f['password'].touched || submitted && f['password'].errors">
+                    <span *ngIf="f['password'].errors['required']">{{errorMessage.required}}</span>
+                    <span *ngIf="f['password'].errors['pattern']">{{errorMessage.check}}</span>
+                </div>   
+                <div class="flex flex-row justify-between gap-2 text-xs md:text-sm underline">
+                    <a routerLink="/auth/signup" class="hover:text-[#e45858]">¿No tienes una cuenta?</a>
+                </div>
+                <button type="submit" class="rounded-lg text-white py-2 cursor-pointer bg-[#e45858] transition-all hover:bg-[#e45858d8]">Aceptar</button>   
+            </div>
+        </form>
+    </section>
+</div>
