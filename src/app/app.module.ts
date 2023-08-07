@@ -15,6 +15,8 @@ import { CardComponent } from './home/components/card/card.component';
 import { PropertyDetailComponent } from './home/components/property-detail/property-detail.component';
 import { ContactComponent } from './home/components/contact/contact.component';
 import { ImageUrl } from './pipes/image-url.pipe';
+import { ProfileComponent } from './home/components/profile/profile.component';
+import { NavbarComponent } from './home/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ImageUrl } from './pipes/image-url.pipe';
     CardComponent,
     PropertyDetailComponent,
     ContactComponent,
-    ImageUrl
+    ImageUrl,
+    ProfileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
