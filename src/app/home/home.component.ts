@@ -7,6 +7,7 @@ import { HomeService } from './services/home.service';
 })
 export class HomeComponent implements OnInit {
   properties!: Object[]
+  img = '../../assets/images/f.PNG'
   constructor(private homeService: HomeService) { }
   ngOnInit(): void {
     this.homeService.getAllHome().subscribe(({ data }: any) => {
