@@ -20,6 +20,7 @@ export class CardComponent {
         bathrooms: this.property.bathrooms,
         rooms: this.property.rooms,
         pets_allowed: this.property.pets_allowed,
+        description: this.property.description
       }
     })
   }
