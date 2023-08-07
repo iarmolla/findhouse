@@ -5,6 +5,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { PropertyRegisterGuard } from './guards/property-register.guard';
 import { HomeComponent } from './home/home.component';
 import { PropertyDetailComponent } from './home/components/property-detail/property-detail.component';
+import { ProfileComponent } from './home/components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -13,15 +14,19 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'home/profile', component: ProfileComponent, canActivate: [PropertyRegisterGuard]
+  },
+  {
     path: 'property-register', component: PropertyRegisterComponent, canActivate: [PropertyRegisterGuard]
   },
   {
-    path: '', component: HomeComponent
+    path: 'home', component: HomeComponent
     // loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'property-detail', component: PropertyDetailComponent
-  }
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 
