@@ -17,6 +17,7 @@ import { ContactComponent } from './home/components/contact/contact.component';
 import { ImageUrl } from './pipes/image-url.pipe';
 import { ProfileComponent } from './home/components/profile/profile.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
