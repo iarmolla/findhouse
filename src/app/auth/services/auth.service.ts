@@ -16,7 +16,14 @@ export class AuthService {
   login(user: User) {
     return this._http.post(`${environment.apiUrl}/user/login`, user)
   }
-  get subjectIsLogged() {
+  updateUser(user: User) {
+    const userId = window.localStorage.getItem('userId')
+    return this._http.put(`${environment.apiUrl}/user/user/${userId}`, user)
+  }
+  getUserById(userId: string) {
+    return this._http.get(`${environment.apiUrl}/user/userById/${userId}`)
+  }
+  get subjectIsLogged(): string {
     const userId = window.localStorage.getItem('userId');
     if(this.isLogged.getValue()) {
       return this.isLogged.getValue()
