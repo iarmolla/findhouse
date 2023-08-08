@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
     this.homeService.getAllHome().subscribe(({ data }: any) => {
       this.properties = data
       this.properties.map((property: any) => {
-        this.homeService.getPictureOwnership(property.id).subscribe(({data}: any) => {
-          if(property.id == data.ownershipId) {
+        this.homeService.getPictureOwnership(property.id).subscribe(({ data }: any) => {
+          if (property.id == data.ownershipId) {
             property.image = data.images[0]
             // property.image = 'https://cdn.tecnogestion.com.ar/multimedia/MAP/MAP/MAP0243/MAP0243_001.jpg?3198697'
             console.log(this.properties);
@@ -22,5 +22,5 @@ export class HomeComponent implements OnInit {
         })
       })
     })
-  }  
+  }
 }
