@@ -20,7 +20,8 @@
                 <div>
                     <button class="w-14 h-14 cursor-pointer hover:bg-gray-100 rounded-full transition-all"
                         (click)="options()">
-                        <img *ngIf="profileImage$" src={{profileImage$}} class="w-9 h-9 m-auto rounded-full shadow object-cover">
+                        <img *ngIf="profileImage$" src={{profileImage$}}
+                            class="w-9 h-9 m-auto rounded-full shadow object-cover">
                         <i *ngIf="!profileImage$" class="fa-solid fa-user text-gray-500"></i>
                     </button>
                 </div>
@@ -28,14 +29,15 @@
                     class=" absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                     role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                     <div class="py-1" role="none">
-                        <span routerLink="/home/profile" class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100" role="menuitem"
-                            tabindex="-1" id="menu-item-0">Editar perfil</span>
-                        <span routerLink="/property-register" class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
+                        <span routerLink="/home/profile"
+                            class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
+                            role="menuitem" tabindex="-1" id="menu-item-0">Editar perfil</span>
+                        <span routerLink="/property-register"
+                            class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-gray-100"
                             role="menuitem" tabindex="-1" id="menu-item-1">Publicar propiedad</span>
-                        <form method="POST" action="#" role="none">
-                            <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm cursor-pointer hover:bg-gray-100"
-                                role="menuitem" tabindex="-1" id="menu-item-3" (click)="logout()">Cerrar sesión</button>
-                        </form>
+                        <button type="submit"
+                            class="text-gray-700 block w-full px-4 py-2 text-left text-sm cursor-pointer hover:bg-gray-100"
+                            role="menuitem" tabindex="-1" id="menu-item-3" (click)="logout()">Cerrar sesión</button>
                     </div>
                 </div>
             </div>

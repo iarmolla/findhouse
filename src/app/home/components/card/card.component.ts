@@ -10,6 +10,11 @@ export class CardComponent {
   @Input() property: any
   constructor(private router: Router) { }
   propertyDetail() {
+    if(this.property.userId.image == null) {
+      this.property.userId.image = "hola"
+    }
+    console.log(      this.property.userId.image 
+    );
     this.router.navigate([`property-detail`], {
       queryParams: {
         id: this.property.id,
@@ -20,7 +25,8 @@ export class CardComponent {
         bathrooms: this.property.bathrooms,
         rooms: this.property.rooms,
         pets_allowed: this.property.pets_allowed,
-        description: this.property.description
+        description: this.property.description,
+        image: this.property.userId.image
       }
     })
   }
