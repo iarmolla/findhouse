@@ -3,7 +3,7 @@
         <div class="max-w-5xl w-full sm:w-full lg:w-full py-6 px-3">
             <div class="bg-white shadow-xl rounded-lg overflow-hidden w-full h-full">
                 <div class="bg-cover bg-center h-56 w-80 p-4 hover:opacity-90 transition-all" (click)="propertyDetail()"
-                    style="background-image: url(https://i0.wp.com/chocale.cl/wp-content/uploads/2019/03/loft-departamento.jpg?fit=1000%2C666&ssl=1)">
+                    style="background-image: url({{property.image|imageUrl}})">
                 </div>
                 <div class="p-4">
                     <p class="uppercase tracking-wide text-sm font-bold text-gray-700">{{property.country}}</p>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,9 @@ import { ImageUrl } from './pipes/image-url.pipe';
 import { ProfileComponent } from './home/components/profile/profile.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     NgxSkeletonLoaderModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
