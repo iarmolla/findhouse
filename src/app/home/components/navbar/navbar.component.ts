@@ -18,7 +18,6 @@ export class NavbarComponent {
   constructor(private authService: AuthService, private imageService: ImageService) {
     this.imageService.imageSubject.subscribe((data) => this.profileImage$ = data)
     this.isLogged = this.authService.subjectIsLogged
-    console.log(this.profileImage$);
   }
   options() {
     this.showOptions = !this.showOptions
