@@ -17,6 +17,7 @@ export class SignupComponent {
     owner: Role.OWNER,
     tenant: Role.TENANT
   }
+  showError: string = ''
   errorMessage = errorMessage
   submitted = false;
   public registerForm: FormGroup
@@ -54,7 +55,11 @@ export class SignupComponent {
           this.router.navigate(['/auth/signin'])
         }, 
         error: (error) => {
+          this.showError = this.errorMessage.signup
           console.log(error);
+          setTimeout(() => {
+            this.showError = ''
+          }, 3000)
           // this._snackBar.open(error.message, 'Aceptar', {
           //   duration: 5000,
           //   verticalPosition: 'top',
