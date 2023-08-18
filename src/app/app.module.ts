@@ -19,6 +19,7 @@ import { ProfileComponent } from './home/components/profile/profile.component';
 import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { register } from 'swiper/element/bundle';
+import { NotificationComponent } from './components/notification/notification.component';
 // register Swiper custom elements
 register();
 
@@ -36,7 +37,8 @@ register();
     ContactComponent,
     ImageUrl,
     ProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
