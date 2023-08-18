@@ -7,14 +7,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class ImageService {
   private image: BehaviorSubject<string> = new BehaviorSubject('')
   profileImage: string = '';
+  userImage: string = '../../../../assets/images/anonymous.jpg'
   /**
    *
    */
   constructor() {
     const user = window.localStorage.getItem('previousFormData')
     if (user) {
-      let data = JSON.parse(user)
-      this.profileImage = data.image
+      this.profileImage = user
       this.imageSubject = this.profileImage
     }
   }
