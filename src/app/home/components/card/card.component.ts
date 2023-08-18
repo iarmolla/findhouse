@@ -1,20 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImageService } from '../../services/image.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   @Input() property: any
-  constructor(private router: Router) { }
-  propertyDetail() {
-    if(this.property.userId.image == null) {
-      this.property.userId.image = "hola"
+  userImage: string = ''
+  constructor(private router: Router, private imageService: ImageService) { }
+  ngOnInit(): void {
+    this.userImage = this.imageService.userImage
+  }
+  propertyDetail(): void {
+    if (this.property.userId.image == null) {
+      this.property.userId.image = ""
     }
-    console.log(      this.property.userId.image 
-    );
+    console.log(this.property.userId);
     this.router.navigate([`property-detail`], {
       queryParams: {
         id: this.property.id,
