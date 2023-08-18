@@ -1,12 +1,13 @@
 <app-navbar></app-navbar>
-<section class="py-5 bg-blueGray-50">
+<section id="form" class="py-5 bg-blueGray-50">
   <form [formGroup]="profileForm" (ngSubmit)="save()" class="w-full">
     <div class="relative flex flex-col min-w-0 break-words w-full mb-6 -lg bg-blueGray-100 border-0">
       <div class="flex items-center justify-center px-4 lg:px-10 py-10 pt-0">
         <div class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
           <div class="text-center">
             <div class="mt-2">
-              <img (click)="inputImage.click()" src={{profileImage||userImage}} class="cursor-pointer hover:opacity-90 transition-all w-40 h-40 m-auto rounded-full shadow object-cover">
+              <img (click)="inputImage.click()" [src]="profileForm.get('image')?.value || userImage"
+                class="cursor-pointer hover:opacity-90 transition-all w-40 h-40 m-auto rounded-full shadow object-cover">
             </div>
             <div class="max-w-xs mt-3">
               <input #inputImage (change)="setImage($event)"
@@ -16,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+      <div class="flex-auto px-4 lg:px-10 md:pt-10 pt-0">
         <div>
           <h6 class="text-blueGray-400 text-sm mt-3 mb-6  uppercase">
             Datos personales
@@ -31,7 +32,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white border-b-2 text-sm border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="lucky.jesse">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['username'].errors && f['username'].touched || submitted && f['username'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['username'].errors && f['username'].touched || submitted && f['username'].errors">
                 <span *ngIf="f['username'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['username'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -45,7 +47,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white  border-b-2  text-sm border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="jesse@example.com">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['email'].errors && f['email'].touched  || submitted && f['email'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['email'].errors && f['email'].touched  || submitted && f['email'].errors">
                 <span *ngIf="f['email'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['email'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -59,7 +62,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white  border-b-2  text-sm border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="Lucky">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['name'].errors && f['name'].touched || submitted && f['name'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['name'].errors && f['name'].touched || submitted && f['name'].errors">
                 <span *ngIf="f['name'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['name'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -73,7 +77,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white  border-b-2 text-sm border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="Jesse">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['lastname'].errors && f['lastname'].touched || submitted && f['lastname'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['lastname'].errors && f['lastname'].touched || submitted && f['lastname'].errors">
                 <span *ngIf="f['lastname'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['lastname'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -104,7 +109,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm border-b-2 border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="Avenida Diaz Velez 4150">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['address'].errors && f['address'].touched  || submitted && f['address'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['address'].errors && f['address'].touched  || submitted && f['address'].errors">
                 <span *ngIf="f['address'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['address'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -118,7 +124,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm border-b-2 border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="Lanús">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['city'].errors && f['city'].touched || submitted && f['city'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['city'].errors && f['city'].touched || submitted && f['city'].errors">
                 <span *ngIf="f['city'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['city'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -132,7 +139,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm  border-b-2 border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="Argentina">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['country'].errors && f['country'].touched || submitted && f['country'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['country'].errors && f['country'].touched || submitted && f['country'].errors">
                 <span *ngIf="f['country'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['country'].errors['pattern']">{{errorMessage.letters}}</span>
               </div>
@@ -146,7 +154,8 @@
                   class="border-0 outline-none focus:ring-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white border-b-2 text-sm border-b-gray-300 focus:outline-none  w-full ease-linear transition-all duration-150"
                   placeholder="1234">
               </div>
-              <div class="text-red-500 text-sm mb-5" *ngIf="f['postalCode'].errors && f['postalCode'].touched || submitted && f['postalCode'].errors">
+              <div class="text-red-500 text-sm mb-5"
+                *ngIf="f['postalCode'].errors && f['postalCode'].touched || submitted && f['postalCode'].errors">
                 <span *ngIf="f['postalCode'].errors['required']">{{errorMessage.required}}</span>
                 <span *ngIf="f['postalCode'].errors['pattern']">{{errorMessage.numbers}}</span>
               </div>
@@ -160,7 +169,7 @@
             <div class="w-full lg:w-12/12 px-4">
               <div class="relative w-full mb-3">
                 <textarea type="text" formControlName="description"
-                  placeholder="Soy una persona apasionada por el arte, la imaginación y el entretenimiento. Desde muy temprana edad, descubrí mi amor por tres cosas que han dado forma a mi vida: los juegos, el dibujo y las series. Además de mi amor por los juegos y el arte, las series también juegan un papel significativo en mi vida. Desde las tramas llenas de giros y vueltas hasta los personajes carismáticos que se sienten como amigos cercanos, las series me sumergen en emocionantes narrativas que me atrapan desde el primer episodio. Tanto si se trata de dramas intensos como de comedias ligeras, disfruto de la diversidad de emociones y experiencias que las series pueden ofrecer. A menudo me encuentro sumergido en maratones de series, fascinado por el talento de los escritores y actores que dan vida a estas historias cautivadoras"
+                  placeholder="Soy una persona apasionada por el arte, la imaginación y el entretenimiento. Desde muy temprana edad, descubrí mi amor por tres cosas que han dado forma a mi vida: los juegos, el dibujo y las series."
                   class="border-0 border-b-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600  text-sm border-b-gray-300 w-full ring-0 outline-none focus:ring-0 focus:outline-none"
                   rows="4"></textarea>
               </div>
@@ -174,12 +183,13 @@
       </div>
     </div>
   </form>
-  <div class="flex items-center justify-center gap-2">
+  <div class="flex flex-col-reverse md:flex-row items-center justify-center gap-2 px-4">
     <button type="submit" (click)="exit()"
-    class="rounded-lg w-full max-w-md hover:bg-gray-200 text-black border-2 border-gray-300 py-2 px-5 cursor-pointer bg-white transition-all focus:ring-4 focus:ring-gray-300 hover:bg-[#c04d4d]0">
-    Salir</button>
+      class="rounded-lg w-full max-w-md hover:bg-gray-200 text-black border-2 border-gray-300 py-2 px-5 cursor-pointer bg-white transition-all focus:ring-4 focus:ring-gray-300 hover:bg-[#c04d4d]0">
+      Salir</button>
     <button type="submit" (click)="save()"
-      class="rounded-lg w-full max-w-md text-white py-2 px-5 cursor-pointer bg-[#e45858] transition-all focus:ring-4 focus:ring-gray-300 hover:bg-[#c04d4d]0">Guardar
+      class="rounded-lg w-full max-w-md text-white py-2 px-5 cursor-pointer bg-[#e45858] hover:bg-[#ca5151] transition-all focus:ring-4 focus:ring-gray-300 hover:bg-[#c04d4d]0">Guardar
       cambios</button>
   </div>
 </section>
+<app-notification [showToast]="showToast" />
