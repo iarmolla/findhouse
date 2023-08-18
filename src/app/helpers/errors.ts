@@ -4,5 +4,7 @@ export const errorMessage = {
     letters: 'Por favor, ingrese solo letras',
     check: 'Por favor, revise bien',
     password: 'Contraseña debe tener al menos 8 caracteres con letras (mayúsculas y minúsculas) y números',
-    error: 'Ocurrio un error inesperado'
+    error: 'Ocurrio un error inesperado',
+    signin: 'Ocurrio un error al iniciar sesión',
+    signup: 'Ocurrio un error al registrar el usuario'
 }
